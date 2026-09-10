@@ -39,21 +39,21 @@ for /L %%i in (1,1,200) do (
 
     :: Scenario Mapping
     if %%i geq 10 if %%i leq 20 (
-        echo [!TIMESTAMP!] [SSH_FAILED] Failed SSH connection attempt for user 'admin', 'guest', 'user1', 'user2', 'user3', 'user4', 'user5' from external IP 203.0.113.50. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Failed SSH connection attempt for user 'admin', 'guest', 'user1', 'user2', 'user3', 'user4', 'user5' from external IP 203.0.113.50. >> "%LOG_FILE%"
     ) else if %%i==21 (
-        echo [!TIMESTAMP!] [SSH_SUCCESS] Successful SSH authentication for user 'guest' from IP 203.0.113.50. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Successful SSH authentication for user 'guest' from IP 203.0.113.50. >> "%LOG_FILE%"
     ) else if %%i==35 (
-        echo [!TIMESTAMP!] [PRIV_ESC] User 'guest' executed command to create new accounts: 'user6' and 'user7'. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] User 'guest' executed command to create new accounts: 'user6' and 'user7'. >> "%LOG_FILE%"
     ) else if %%i geq 50 if %%i leq 70 (
-        echo [!TIMESTAMP!] [SSH_FAILED] Continuous attack: Failed SSH authentication attempt for user 'user6' and 'user7'. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Continuous attack: Failed SSH authentication attempt for user 'user6' and 'user7'. >> "%LOG_FILE%"
     ) else if %%i==62 (
-        echo [!TIMESTAMP!] [ACCOUNT_MOD] User account 'user2' modified and renamed/escalated to 'UserA' by administrative command. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] User account 'user2' modified and renamed/escalated to 'UserA' by administrative command. >> "%LOG_FILE%"
     ) else if %%i geq 80 if %%i leq 95 (
-        echo [!TIMESTAMP!] [SSH_BRUTE] Ongoing brute-force attack targeting account 'UserA'. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Ongoing brute-force attack targeting account 'UserA'. >> "%LOG_FILE%"
     ) else if %%i==96 (
-        echo [!TIMESTAMP!] [SSH_SUCCESS] Successful SSH authentication made for account 'UserA' from external IP 203.0.113.50. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Successful SSH authentication made for account 'UserA' from external IP 203.0.113.50. >> "%LOG_FILE%"
     ) else (
-        echo [!TIMESTAMP!] [BACKGROUND] Network routine heartbeat node 192.168.1.!randIP! active. >> "%LOG_FILE%"
+        echo [!TIMESTAMP!] Network routine heartbeat node 192.168.1.!randIP! active. >> "%LOG_FILE%"
     )
 )
 
@@ -89,7 +89,7 @@ set /p "ans2=Q2: What new users did the guest account create after gaining acces
 if /i "%ans2%"=="user6 and user7" (
     echo [+] Correct! They created user6 and user7 to extend the attack.
 ) else (
-    echo [-] Incorrect. (Hint: Look for account creation indicators for user6/user7)
+    echo [-] Incorrect. (Hint: Look for account creation indicators)
 )
 echo.
 
@@ -98,7 +98,7 @@ set /p "ans3=Q3: Which original user account was modified into 'UserA' during th
 if /i "%ans3%"=="user2" (
     echo [+] Correct! user2 was modified/escalated to UserA.
 ) else (
-    echo [-] Incorrect. (Hint: Look for ACCOUNT_MOD events involving user2)
+    echo [-] Incorrect. (Hint: Look for ACCOUNT_MODIFY events)
 )
 echo.
 
@@ -107,7 +107,7 @@ set /p "ans4=Q4: Which account ultimately made a successful SSH authentication a
 if /i "%ans4%"=="UserA" (
     echo [+] Correct! UserA achieved the final successful SSH login.
 ) else (
-    echo [-] Incorrect. (Hint: Check the final stages of the attack timeline for UserA)
+    echo [-] Incorrect. (Hint: Check the final stages of the attack timeline)
 )
 
 echo.

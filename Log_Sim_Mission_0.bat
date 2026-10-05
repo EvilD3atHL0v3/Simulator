@@ -233,7 +233,7 @@ echo ================================================================
 echo.
 echo  Analyst:        SECURITY OPERATIONS TRAINEE
 echo  Status:         MISSION COMPLETE
-echo  MESSAGE:         Q29uZ3JhdHVsYXRpb25zISBNaXNzaW9uIGNvbXBsZXRlLgpUaGUgZmluYWwgZmxhZyB3YXMgRkxBR3tTM0N1cmlUeS1BbmFMeSQrfQ==
+echo  Message:        Q29uZ3JhdHVsYXRpb25zISBNaXNzaW9uIGNvbXBsZXRlLgpUaGUgZmluYWwgZmxhZyB3YXMgRkxBR3tTM0N1cmlUeS1BbmFMeSQrfQ==
 echo.
 pause
 pause

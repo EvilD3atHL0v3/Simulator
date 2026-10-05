@@ -147,7 +147,7 @@ if not exist "%LOG_FILE%" (
 echo ========================================================
 echo      INCIDENT INVESTIGATION CAPTURE GAME
 echo ========================================================
-echo Use 'findstr' mentally or in another window to investigate!
+echo Tips: Use 'findstr' mentally or in another window to investigate!
 echo.
 
 :: Question 1 Loop (Stays here until answered correctly)

@@ -226,10 +226,15 @@ if /i "%ans6%"=="FLAG{BRuT3-F0rC3-Att5cK}" (
     goto ASK_Q6
 )
 :ASK_F
-echo ========================================================
-echo Investigation Complete! 
-echo Tip: You can type 'findstr /i "keyword" %LOG_FILE%' in a separate 
-echo command prompt window to inspect the raw data anytime.
-echo ========================================================
+cls
+echo ================================================================
+echo                    FINAL REPORT
+echo ================================================================
+echo.
+echo  Analyst:        SECURITY OPERATIONS TRAINEE
+echo  Status:         MISSION COMPLETE
+echo  MESSAGE:         Q29uZ3JhdHVsYXRpb25zISBNaXNzaW9uIGNvbXBsZXRlLgpUaGUgZmluYWwgZmxhZyB3YXMgRkxBR3tTM0N1cmlUeS1BbmFMeSQrfQ==
+echo.
+pause
 pause
 goto MENU
